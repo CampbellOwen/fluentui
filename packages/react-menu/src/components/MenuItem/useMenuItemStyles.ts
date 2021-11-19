@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     fontSize: theme.fontSizeBase300,
     cursor: 'pointer',
-    gap: '4px',
+    ...shorthands.gap('4px'),
 
     ':hover': {
       backgroundColor: theme.colorNeutralBackground1Hover,

@@ -88,9 +88,9 @@ const useStyles = makeStyles({
 
   activeOrInactive: {
     transform: 'perspective(1px)', // Work-around for text pixel snapping at the end of the animation
-    transition:
-      `transform ${animationTiming.ultraSlow} ${animations.fastEase}, ` +
-      `opacity ${animationTiming.faster} ${animations.nullEasing}`,
+    transitionProperty: 'transform, opacity',
+    transitionDuration: `${animationTiming.ultraSlow}, ${animationTiming.faster}`,
+    transitionDelay: `${animations.fastEase}, ${animations.nullEasing}`,
 
     ':before': {
       content: '""',
@@ -101,9 +101,9 @@ const useStyles = makeStyles({
       right: 0,
 
       ...shorthands.borderRadius('inherit'),
-      transition:
-        `margin ${animationTiming.ultraSlow} ${animations.fastEase}, ` +
-        `opacity ${animationTiming.slower} ${animations.nullEasing}`,
+      transitionProperty: 'margin, opacity',
+      transitionDuration: `${animationTiming.ultraSlow}, ${animationTiming.slower}`,
+      transitionDelay: `${animations.fastEase}, ${animations.nullEasing}`,
     },
   },
 
@@ -146,16 +146,18 @@ const useStyles = makeStyles({
   inactive: {
     opacity: '0.8',
     transform: 'scale(0.875)',
-    transition:
-      `transform ${animationTiming.ultraSlow} ${animations.fastOutSlowInMin}, ` +
-      `opacity ${animationTiming.faster} ${animations.nullEasing}`,
+
+    transitionProperty: 'transform, opacity',
+    transitionDuration: `${animationTiming.ultraSlow}, ${animationTiming.faster}`,
+    transitionDelay: `${animations.fastOutSlowInMin}, ${animations.nullEasing}`,
 
     ':before': {
       ...shorthands.margin(0),
       opacity: 0,
-      transition:
-        `margin ${animationTiming.ultraSlow} ${animations.fastOutSlowInMin}, ` +
-        `opacity ${animationTiming.slower} ${animations.nullEasing}`,
+
+      transitionProperty: 'margin, opacity',
+      transitionDuration: `${animationTiming.ultraSlow}, ${animationTiming.slower}`,
+      transitionDelay: `${animations.fastOutSlowInMin}, ${animations.nullEasing}`,
     },
   },
 

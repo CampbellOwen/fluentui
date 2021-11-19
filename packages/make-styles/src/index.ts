@@ -8,6 +8,7 @@ import {
   borderStyle,
   borderRadius,
   borderWidth,
+  gap,
   margin,
   padding,
 } from './shorthands/index';
@@ -22,6 +23,7 @@ export const shorthands = {
   borderStyle,
   borderRadius,
   borderWidth,
+  gap,
   margin,
   padding,
 };

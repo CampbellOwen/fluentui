@@ -27,7 +27,8 @@ const useRootStyles = makeStyles({
 
     maxWidth: '280px',
 
-    overflow: 'hidden',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
 
@@ -139,7 +140,7 @@ const useRootStyles = makeStyles({
 
   // Size variations
   small: theme => ({
-    gap: buttonSpacing.smaller,
+    ...shorthands.gap(buttonSpacing.smaller),
     ...shorthands.padding('0', buttonSpacing.medium),
 
     height: '24px',
@@ -152,7 +153,7 @@ const useRootStyles = makeStyles({
     lineHeight: theme.lineHeightBase200,
   }),
   medium: theme => ({
-    gap: buttonSpacing.small,
+    ...shorthands.gap(buttonSpacing.small),
     ...shorthands.padding('0', buttonSpacing.large),
 
     height: '32px',
@@ -165,7 +166,7 @@ const useRootStyles = makeStyles({
     lineHeight: theme.lineHeightBase300,
   }),
   large: theme => ({
-    gap: buttonSpacing.small,
+    ...shorthands.gap(buttonSpacing.small),
     ...shorthands.padding('0', buttonSpacing.larger),
 
     height: '40px',

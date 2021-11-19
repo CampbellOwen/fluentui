@@ -11,7 +11,7 @@ const CompoundButtonClassNames = {
 const useRootStyles = makeStyles({
   // Base styles
   base: theme => ({
-    gap: buttonSpacing.large,
+    ...shorthands.gap(buttonSpacing.large),
 
     height: 'auto',
 

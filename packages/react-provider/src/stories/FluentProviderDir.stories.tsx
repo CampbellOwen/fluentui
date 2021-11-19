@@ -6,7 +6,7 @@ const useStyles = makeStyles({
   example: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '5px',
+    ...shorthands.gap('5px'),
     width: '300px',
   },
   text: theme => ({

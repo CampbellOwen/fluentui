@@ -27,9 +27,10 @@ const useStyles = makeStyles({
     fontWeight: theme.fontWeightRegular,
     ...shorthands.margin(0),
     ...shorthands.padding(0),
-    overflow: 'inherit',
+    overflowX: 'inherit',
+    overflowY: 'inherit',
     textAlign: 'left',
-    textDecoration: 'none',
+    textDecorationLine: 'none',
     textOverflow: 'inherit',
     userSelect: 'text',
 

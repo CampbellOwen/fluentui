@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     display: 'inline-grid',
     gridTemplateColumns: 'repeat(5, 1fr)',
     gridTemplateRows: 'repeat(5, 64px)',
-    gap: '4px',
+    ...shorthands.gap('4px'),
     ...shorthands.margin('16px 128px'),
   },
 });

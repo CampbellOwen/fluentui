@@ -11,12 +11,12 @@ import { Button } from '@fluentui/react-button';
 // https://github.com/microsoft/fluentui/pull/18695#issuecomment-868432982
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { makeStyles } from '@fluentui/react-make-styles';
+import { makeStyles, shorthands } from '@fluentui/react-make-styles';
 
 const useStyles = makeStyles({
   container: {
     display: 'flex',
-    gap: '10px',
+    ...shorthands.gap('10px'),
   },
 
   indicator: {

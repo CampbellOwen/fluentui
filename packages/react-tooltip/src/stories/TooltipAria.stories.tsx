@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     alignItems: 'flex-start',
     ...shorthands.margin('16px', '0'),
-    gap: '16px',
+    ...shorthands.gap('16px'),
   },
 });
 

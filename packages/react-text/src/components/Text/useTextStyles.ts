@@ -15,12 +15,14 @@ const useStyles = makeStyles({
     textAlign: 'start',
     display: 'inline',
     whiteSpace: 'normal',
-    overflow: 'visible',
+    overflowX: 'visible',
+    overflowY: 'visible',
     textOverflow: 'clip',
   }),
   nowrap: {
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
   },
   truncate: {
     textOverflow: 'ellipsis',
@@ -32,13 +34,13 @@ const useStyles = makeStyles({
     fontStyle: 'italic',
   },
   underline: {
-    textDecoration: 'underline',
+    textDecorationLine: 'underline',
   },
   strikethrough: {
-    textDecoration: 'line-through',
+    textDecorationLine: 'line-through',
   },
   strikethroughUnderline: {
-    textDecoration: 'line-through underline',
+    textDecorationLine: 'line-through underline',
   },
   base100: theme => ({
     fontSize: theme.fontSizeBase100,

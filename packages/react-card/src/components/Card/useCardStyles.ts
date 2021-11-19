@@ -11,7 +11,8 @@ const useStyles = makeStyles({
   root: theme => ({
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
 
     boxShadow: theme.shadow4,
     color: theme.colorNeutralForeground1,
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
     // TODO: Validate if we should use a token instead + the unit of said token
     // TODO: Explore alternate way of applying padding
     ...shorthands.padding('12px'),
-    gap: '12px',
+    ...shorthands.gap('12px'),
     ...shorthands.borderRadius(theme.borderRadiusMedium),
 
     [`> .${cardPreviewClassName}`]: {
