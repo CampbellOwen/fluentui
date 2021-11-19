@@ -4,7 +4,10 @@
 
 ```ts
 
-import * as CSS_2 from 'csstype';
+import { BorderColorProperty } from 'csstype';
+import { BorderStyleProperty } from 'csstype';
+import { BorderWidthProperty } from 'csstype';
+import { Properties } from 'csstype';
 
 // @internal
 export function __styles<Slots extends string>(classesMapBySlot: CSSClassesMapBySlot<Slots>, cssRules: CSSRulesByBucket): (options: Pick<MakeStylesOptions, 'dir' | 'renderer'>) => Record<Slots, string>;
@@ -20,16 +23,15 @@ export function createDOMRenderer(target?: Document | undefined): MakeStylesRend
 // @public (undocumented)
 export type CSSClasses = /* ltrClassName */ string | [/* ltrClassName */ string, /* rtlClassName */ string];
 
-// Warning: (ae-forgotten-export) The symbol "CSSClassesMap" needs to be exported by the entry point index.d.ts
-//
+// @public (undocumented)
+export type CSSClassesMap = Record<PropertyHash, CSSClasses>;
+
 // @public (undocumented)
 export type CSSClassesMapBySlot<Slots extends string | number> = Record<Slots, CSSClassesMap>;
 
 // @public (undocumented)
 export type CSSRulesByBucket = Partial<Record<StyleBucketName, string[]>>;
 
-// Warning: (ae-forgotten-export) The symbol "SequenceHash" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "LookupItem" needs to be exported by the entry point index.d.ts
 // Warning: (ae-internal-missing-underscore) The name "DEFINITION_LOOKUP_TABLE" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal (undocumented)
@@ -51,35 +53,11 @@ export const LOOKUP_DEFINITIONS_INDEX = 0;
 export const LOOKUP_DIR_INDEX = 1;
 
 // @public (undocumented)
-export const macros: {
-    border: typeof border;
-    borderLeft: typeof borderLeft;
-    borderBottom: typeof borderBottom;
-    borderRight: typeof borderRight;
-    borderTop: typeof borderTop;
-    borderColor: typeof borderColor;
-    borderStyle: typeof borderStyle;
-    borderRadius: typeof borderRadius;
-    borderWidth: typeof borderWidth;
-    margin: typeof margin;
-    padding: typeof padding;
-};
+export type LookupItem = [/* definitions */ CSSClassesMap, /* dir */ /* dir */ 'rtl' | 'ltr'];
 
 // @public (undocumented)
-export type MakeStaticStyles = MakeStaticStylesStyle | string;
-
-// @public
-export function makeStaticStyles(styles: MakeStaticStyles | MakeStaticStyles[]): (options: MakeStaticStylesOptions) => void;
-
-// @public (undocumented)
-export interface MakeStaticStylesOptions {
-    // (undocumented)
-    renderer: MakeStylesRenderer;
-}
-
-// @public (undocumented)
-export type MakeStaticStylesStyle = {
-    [key: string]: CSS_2.Properties & Record<string, any>;
+export type MakeStaticStyles = ({
+    [key: string]: Properties & Record<string, any>;
 } & {
     '@font-face'?: {
         fontFamily: string;
@@ -92,17 +70,30 @@ export type MakeStaticStylesStyle = {
         fontWeight?: number | string;
         unicodeRange?: string;
     };
-};
+}) | string;
 
-// Warning: (ae-forgotten-export) The symbol "StylesBySlots" needs to be exported by the entry point index.d.ts
-//
+// @public
+export function makeStaticStyles(styles: MakeStaticStyles | MakeStaticStyles[]): (options: MakeStaticStylesOptions) => void;
+
+// @public (undocumented)
+export interface MakeStaticStylesOptions {
+    // (undocumented)
+    renderer: MakeStylesRenderer;
+}
+
+// @public (undocumented)
+export interface MakeStyles extends Omit<Properties<MakeStylesCSSValue>, 'animationName'> {
+    // (undocumented)
+    [key: string]: any;
+    // (undocumented)
+    animationName?: object | string;
+}
+
 // @public (undocumented)
 export function makeStyles<Slots extends string | number, Tokens>(stylesBySlots: StylesBySlots<Slots, Tokens>, unstable_cssPriority?: number): (options: MakeStylesOptions) => Record<Slots, string>;
 
-// Warning: (ae-forgotten-export) The symbol "MakeStylesCSSObjectCustom" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
-export type MakeStylesAnimation = Record<'from' | 'to' | string, MakeStylesCSSObjectCustom>;
+export type MakeStylesCSSValue = string | 0;
 
 // @public (undocumented)
 export interface MakeStylesOptions {
@@ -124,19 +115,17 @@ export interface MakeStylesRenderer {
     styleElements: Partial<Record<StyleBucketName, HTMLStyleElement>>;
 }
 
-// Warning: (ae-forgotten-export) The symbol "MakeStylesStrictCSSObject" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
-export type MakeStylesStyle = MakeStylesStrictCSSObject | MakeStylesCSSObjectCustom;
+export type MakeStylesStyleFunctionRule<Tokens> = (tokens: Tokens) => MakeStyles;
 
 // @public (undocumented)
-export type MakeStylesStyleFunctionRule<Tokens> = (tokens: Tokens) => MakeStylesStyle;
-
-// @public (undocumented)
-export type MakeStylesStyleRule<Tokens> = MakeStylesStyle | MakeStylesStyleFunctionRule<Tokens>;
+export type MakeStylesStyleRule<Tokens> = MakeStyles | MakeStylesStyleFunctionRule<Tokens>;
 
 // @public
 export function mergeClasses(...classNames: (string | false | undefined)[]): string;
+
+// @public (undocumented)
+export type PropertyHash = string;
 
 // @public
 export function rehydrateRendererCache(renderer: MakeStylesRenderer, target?: Document | undefined): void;
@@ -149,7 +138,7 @@ export function resolveProxyValues<T>(value: T): T;
 // Warning: (ae-internal-missing-underscore) The name "resolveStyleRules" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal
-export function resolveStyleRules(styles: MakeStylesStyle, unstable_cssPriority?: number): [CSSClassesMap, CSSRulesByBucket];
+export function resolveStyleRules(styles: MakeStyles, unstable_cssPriority?: number): [CSSClassesMap, CSSRulesByBucket];
 
 // @public
 export function resolveStyleRulesForSlots<Slots extends string | number, Tokens>(stylesBySlots: StylesBySlots<Slots, Tokens>, unstable_cssPriority: number): [CSSClassesMapBySlot<Slots>, CSSRulesByBucket];
@@ -164,11 +153,32 @@ export const SEQUENCE_HASH_LENGTH = 7;
 // @internal (undocumented)
 export const SEQUENCE_PREFIX = "___";
 
+// @public (undocumented)
+export type SequenceHash = string;
+
+// @public (undocumented)
+export const shorthands: {
+    border: typeof border;
+    borderLeft: typeof borderLeft;
+    borderBottom: typeof borderBottom;
+    borderRight: typeof borderRight;
+    borderTop: typeof borderTop;
+    borderColor: typeof borderColor;
+    borderStyle: typeof borderStyle;
+    borderRadius: typeof borderRadius;
+    borderWidth: typeof borderWidth;
+    margin: typeof margin;
+    padding: typeof padding;
+};
+
 // @public
 export type StyleBucketName = 'd' | 'l' | 'v' | 'w' | 'f' | 'i' | 'h' | 'a' | 'k' | 't';
 
 // @public
 export const styleBucketOrdering: StyleBucketName[];
+
+// @public (undocumented)
+export type StylesBySlots<Slots extends string | number, Tokens> = Record<Slots, MakeStylesStyleRule<Tokens>>;
 
 // Warnings were encountered during analysis:
 //

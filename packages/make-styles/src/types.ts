@@ -1,5 +1,7 @@
 import * as CSS from 'csstype';
 
+export type MakeStylesCSSValue = string | 0;
+
 type MakeStylesUnsupportedCSSProperties = {
   // We don't support expansion of CSS shorthands
   animation?: never;
@@ -18,7 +20,7 @@ type MakeStylesUnsupportedCSSProperties = {
   outline?: never;
 };
 type MakeStylesCSSProperties = Omit<
-  CSS.Properties,
+  CSS.Properties<MakeStylesCSSValue>,
   // We have custom definition for "animationName"
   'animationName'
 > &
