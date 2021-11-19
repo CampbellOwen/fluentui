@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { macros, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles } from '@fluentui/react-make-styles';
 // https://github.com/microsoft/fluentui/pull/18695#issuecomment-868432982
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -43,7 +43,7 @@ const useIosStyles = makeStyles({
     ':hover .fui-Switch-track': {
       // Unchecked
       ':before': {
-        ...macros.borderColor('none'),
+        ...shorthands.borderColor('none'),
       },
 
       // Checked
@@ -54,7 +54,7 @@ const useIosStyles = makeStyles({
 
     ':active .fui-Switch-track': {
       ':before': {
-        ...macros.borderColor('none'),
+        ...shorthands.borderColor('none'),
       },
       ':after': {
         backgroundColor: '#4cd964',
@@ -87,11 +87,11 @@ const useIosStyles = makeStyles({
   track: {
     ':after': {
       backgroundColor: '#4cd964',
-      ...macros.border('none'),
+      ...shorthands.border('none'),
     },
     ':before': {
       backgroundColor: 'white',
-      ...macros.border('1px', 'solid', '#e0e0e0'),
+      ...shorthands.border('1px', 'solid', '#e0e0e0'),
     },
   },
 });
@@ -116,7 +116,7 @@ const useMaterialStyles = makeStyles({
       },
       ':after': {
         backgroundColor: '#fa80ab',
-        ...macros.border('none'),
+        ...shorthands.border('none'),
       },
     },
 
@@ -126,7 +126,7 @@ const useMaterialStyles = makeStyles({
       },
       ':after': {
         backgroundColor: '#fa80ab',
-        ...macros.border('none'),
+        ...shorthands.border('none'),
       },
     },
   },
@@ -152,11 +152,11 @@ const useMaterialStyles = makeStyles({
   track: {
     ':before': {
       backgroundColor: '#9f9f9f',
-      ...macros.border('none'),
+      ...shorthands.border('none'),
     },
     ':after': {
       backgroundColor: '#fa80ab',
-      ...macros.border('none'),
+      ...shorthands.border('none'),
     },
   },
 });

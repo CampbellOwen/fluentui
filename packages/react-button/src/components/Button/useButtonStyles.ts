@@ -1,4 +1,4 @@
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { createCustomFocusIndicatorStyle } from '@fluentui/react-tabster';
 import type { ButtonState } from './Button.types';
 
@@ -23,7 +23,7 @@ const useRootStyles = makeStyles({
     justifyContent: 'center',
     verticalAlign: 'middle',
 
-    ...macros.margin(0),
+    ...shorthands.margin(0),
 
     maxWidth: '280px',
 
@@ -33,7 +33,7 @@ const useRootStyles = makeStyles({
 
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorNeutralForeground1,
-    ...macros.border(theme.strokeWidthThin, 'solid', theme.colorNeutralStroke1),
+    ...shorthands.border(theme.strokeWidthThin, 'solid', theme.colorNeutralStroke1),
 
     fontFamily: theme.fontFamilyBase,
 
@@ -41,7 +41,7 @@ const useRootStyles = makeStyles({
 
     ':hover': {
       backgroundColor: theme.colorNeutralBackground1Hover,
-      ...macros.borderColor(theme.colorNeutralStroke1Hover),
+      ...shorthands.borderColor(theme.colorNeutralStroke1Hover),
       color: theme.colorNeutralForeground1,
 
       cursor: 'pointer',
@@ -49,7 +49,7 @@ const useRootStyles = makeStyles({
 
     ':active': {
       backgroundColor: theme.colorNeutralBackground1Pressed,
-      ...macros.borderColor(theme.colorNeutralStroke1Pressed),
+      ...shorthands.borderColor(theme.colorNeutralStroke1Pressed),
       color: theme.colorNeutralForeground1,
 
       outlineStyle: 'none',
@@ -76,76 +76,76 @@ const useRootStyles = makeStyles({
   }),
   primary: theme => ({
     backgroundColor: theme.colorBrandBackground,
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
     color: theme.colorNeutralForegroundOnBrand,
 
     ':hover': {
       backgroundColor: theme.colorBrandBackgroundHover,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForegroundOnBrand,
     },
 
     ':active': {
       backgroundColor: theme.colorBrandBackgroundPressed,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForegroundOnBrand,
     },
   }),
   subtle: theme => ({
     backgroundColor: theme.colorSubtleBackground,
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
     color: theme.colorNeutralForeground2,
 
     ':hover': {
       backgroundColor: theme.colorSubtleBackgroundHover,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForeground2BrandHover,
     },
 
     ':active': {
       backgroundColor: theme.colorSubtleBackgroundPressed,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForeground2BrandPressed,
     },
   }),
   transparent: theme => ({
     backgroundColor: theme.colorTransparentBackground,
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
     color: theme.colorNeutralForeground2,
 
     ':hover': {
       backgroundColor: theme.colorTransparentBackgroundHover,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForeground2BrandHover,
     },
 
     ':active': {
       backgroundColor: theme.colorTransparentBackgroundPressed,
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
       color: theme.colorNeutralForeground2BrandPressed,
     },
   }),
 
   // Shape variations
   circular: theme => ({
-    ...macros.borderRadius(theme.borderRadiusCircular),
+    ...shorthands.borderRadius(theme.borderRadiusCircular),
   }),
   rounded: {
     /* The borderRadius rounded styles are handled in the size variations */
   },
   square: theme => ({
-    ...macros.borderRadius(theme.borderRadiusNone),
+    ...shorthands.borderRadius(theme.borderRadiusNone),
   }),
 
   // Size variations
   small: theme => ({
     gap: buttonSpacing.smaller,
-    ...macros.padding('0', buttonSpacing.medium),
+    ...shorthands.padding('0', buttonSpacing.medium),
 
     height: '24px',
     minWidth: '64px',
 
-    ...macros.borderRadius(theme.borderRadiusSmall),
+    ...shorthands.borderRadius(theme.borderRadiusSmall),
 
     fontSize: theme.fontSizeBase200,
     fontWeight: theme.fontWeightRegular,
@@ -153,12 +153,12 @@ const useRootStyles = makeStyles({
   }),
   medium: theme => ({
     gap: buttonSpacing.small,
-    ...macros.padding('0', buttonSpacing.large),
+    ...shorthands.padding('0', buttonSpacing.large),
 
     height: '32px',
     minWidth: '96px',
 
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
 
     fontSize: theme.fontSizeBase300,
     fontWeight: theme.fontWeightSemibold,
@@ -166,12 +166,12 @@ const useRootStyles = makeStyles({
   }),
   large: theme => ({
     gap: buttonSpacing.small,
-    ...macros.padding('0', buttonSpacing.larger),
+    ...shorthands.padding('0', buttonSpacing.larger),
 
     height: '40px',
     minWidth: '96px',
 
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
 
     fontSize: theme.fontSizeBase400,
     fontWeight: theme.fontWeightSemibold,
@@ -183,14 +183,14 @@ const useRootDisabledStyles = makeStyles({
   // Base styles
   base: theme => ({
     backgroundColor: theme.colorNeutralBackgroundDisabled,
-    ...macros.borderColor(theme.colorNeutralStrokeDisabled),
+    ...shorthands.borderColor(theme.colorNeutralStrokeDisabled),
     color: theme.colorNeutralForegroundDisabled,
 
     cursor: 'not-allowed',
 
     ':hover': {
       backgroundColor: theme.colorNeutralBackgroundDisabled,
-      ...macros.borderColor(theme.colorNeutralStrokeDisabled),
+      ...shorthands.borderColor(theme.colorNeutralStrokeDisabled),
       color: theme.colorNeutralForegroundDisabled,
 
       cursor: 'not-allowed',
@@ -198,7 +198,7 @@ const useRootDisabledStyles = makeStyles({
 
     ':active': {
       backgroundColor: theme.colorNeutralBackgroundDisabled,
-      ...macros.borderColor(theme.colorNeutralStrokeDisabled),
+      ...shorthands.borderColor(theme.colorNeutralStrokeDisabled),
       color: theme.colorNeutralForegroundDisabled,
 
       cursor: 'not-allowed',
@@ -218,42 +218,42 @@ const useRootDisabledStyles = makeStyles({
     },
   }),
   primary: {
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
 
     ':hover': {
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
 
     ':active': {
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
   },
   subtle: {
     backgroundColor: 'transparent',
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
 
     ':hover': {
       backgroundColor: 'transparent',
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
 
     ':active': {
       backgroundColor: 'transparent',
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
   },
   transparent: {
     backgroundColor: 'transparent',
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
 
     ':hover': {
       backgroundColor: 'transparent',
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
 
     ':active': {
       backgroundColor: 'transparent',
-      ...macros.borderColor('transparent'),
+      ...shorthands.borderColor('transparent'),
     },
   },
 });
@@ -270,7 +270,7 @@ const useRootFocusStyles = makeStyles({
   // square: theme => createFocusOutlineStyle(theme, { style: { outlineRadius: theme.global.borderRadius.none } }),
 
   base: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderColor('transparent'),
+    ...shorthands.borderColor('transparent'),
     outlineColor: 'transparent',
     outlineWidth: '2px',
     outlineStyle: 'solid',
@@ -282,46 +282,46 @@ const useRootFocusStyles = makeStyles({
   })),
 
   circular: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderRadius(theme.borderRadiusCircular),
+    ...shorthands.borderRadius(theme.borderRadiusCircular),
   })),
   rounded: {},
   // Primary styles
   primary: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderColor(theme.colorNeutralForegroundOnBrand),
+    ...shorthands.borderColor(theme.colorNeutralForegroundOnBrand),
     boxShadow: `${theme.shadow2}, 0 0 0 2px ${theme.colorStrokeFocus2}`,
   })),
   square: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderRadius(theme.borderRadiusNone),
+    ...shorthands.borderRadius(theme.borderRadiusNone),
   })),
 
   // Size variations
   small: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderRadius(theme.borderRadiusSmall),
+    ...shorthands.borderRadius(theme.borderRadiusSmall),
   })),
   medium: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
   })),
   large: createCustomFocusIndicatorStyle(theme => ({
-    ...macros.borderRadius(theme.borderRadiusLarge),
+    ...shorthands.borderRadius(theme.borderRadiusLarge),
   })),
 });
 
 const useRootIconOnlyStyles = makeStyles({
   // Size variations
   small: {
-    ...macros.padding(buttonSpacing.smaller),
+    ...shorthands.padding(buttonSpacing.smaller),
 
     minWidth: '28px',
     maxWidth: '28px',
   },
   medium: {
-    ...macros.padding(buttonSpacing.smaller),
+    ...shorthands.padding(buttonSpacing.smaller),
 
     minWidth: '32px',
     maxWidth: '32px',
   },
   large: {
-    ...macros.padding(buttonSpacing.small),
+    ...shorthands.padding(buttonSpacing.small),
 
     minWidth: '40px',
     maxWidth: '40px',

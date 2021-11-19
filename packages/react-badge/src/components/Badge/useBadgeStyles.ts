@@ -1,4 +1,4 @@
-import { macros, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
 import type { BadgeState } from './Badge.types';
 
 export const badgeClassName = 'fui-Badge';
@@ -10,11 +10,11 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: theme.colorBrandBackground,
-    ...macros.borderColor(theme.colorBrandBackground),
+    ...shorthands.borderColor(theme.colorBrandBackground),
     color: theme.colorNeutralForegroundOnBrand,
     fontWeight: theme.fontWeightSemibold,
-    ...macros.borderWidth(theme.strokeWidthThin),
-    ...macros.borderStyle('solid'),
+    ...shorthands.borderWidth(theme.strokeWidthThin),
+    ...shorthands.borderStyle('solid'),
     fontFamily: theme.fontFamilyBase,
     position: 'relative',
   }),
@@ -59,45 +59,45 @@ const useStyles = makeStyles({
     paddingLeft: '12px',
     gap: '6px',
     fontSize: '12px',
-    ...macros.borderWidth(theme.strokeWidthThick),
+    ...shorthands.borderWidth(theme.strokeWidthThick),
   }),
   rootRounded: theme => ({
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
   }),
   rootRoundedSmallToTiny: theme => ({
-    ...macros.borderRadius(theme.borderRadiusSmall),
+    ...shorthands.borderRadius(theme.borderRadiusSmall),
   }),
   rootCircular: {
-    ...macros.borderRadius('99px'),
+    ...shorthands.borderRadius('99px'),
   },
   rootGhost: theme => ({
     backgroundColor: 'transparent',
-    ...macros.borderStyle('none'),
+    ...shorthands.borderStyle('none'),
     color: theme.colorBrandBackground,
   }),
   rootOutline: theme => ({
     backgroundColor: 'transparent',
-    ...macros.borderColor(theme.colorBrandBackground),
+    ...shorthands.borderColor(theme.colorBrandBackground),
     color: theme.colorBrandBackground,
   }),
   rootTint: theme => ({
     backgroundColor: theme.colorBrandBackground2,
     color: theme.colorBrandForeground2,
-    ...macros.borderStyle('none'),
+    ...shorthands.borderStyle('none'),
   }),
   rootFilledDanger: theme => ({
     backgroundColor: theme.colorPaletteRedBackground3,
     color: theme.colorNeutralForegroundOnBrand,
-    ...macros.borderColor(theme.colorPaletteRedBackground3),
+    ...shorthands.borderColor(theme.colorPaletteRedBackground3),
   }),
   rootOutlineDanger: theme => ({
     color: theme.colorPaletteRedForeground3,
-    ...macros.borderColor(theme.colorPaletteRedForeground3),
+    ...shorthands.borderColor(theme.colorPaletteRedForeground3),
   }),
   rootTintDanger: theme => ({
     backgroundColor: theme.colorPaletteRedBackground1,
     color: theme.colorPaletteRedForeground1,
-    ...macros.borderColor(theme.colorPaletteRedForeground2),
+    ...shorthands.borderColor(theme.colorPaletteRedForeground2),
   }),
   rootGhostDanger: theme => ({
     color: theme.colorPaletteRedForeground3,
@@ -105,16 +105,16 @@ const useStyles = makeStyles({
   rootFilledSevere: theme => ({
     backgroundColor: theme.colorPaletteDarkOrangeBackground3,
     color: theme.colorNeutralForegroundOnBrand,
-    ...macros.borderColor('none'),
+    ...shorthands.borderColor('none'),
   }),
   rootOutlineSevere: theme => ({
     color: theme.colorPaletteDarkOrangeForeground3,
-    ...macros.borderColor(theme.colorPaletteDarkOrangeForeground3),
+    ...shorthands.borderColor(theme.colorPaletteDarkOrangeForeground3),
   }),
   rootTintSevere: theme => ({
     backgroundColor: theme.colorPaletteDarkOrangeBackground1,
     color: theme.colorPaletteDarkOrangeForeground1,
-    ...macros.borderColor(theme.colorPaletteDarkOrangeForeground2),
+    ...shorthands.borderColor(theme.colorPaletteDarkOrangeForeground2),
   }),
   rootGhostSevere: theme => ({
     color: theme.colorPaletteDarkOrangeForeground3,
@@ -122,16 +122,16 @@ const useStyles = makeStyles({
   rootFilledWarning: theme => ({
     backgroundColor: theme.colorPaletteYellowBackground3,
     color: theme.colorNeutralForeground1,
-    ...macros.borderColor(theme.colorPaletteYellowBackground3),
+    ...shorthands.borderColor(theme.colorPaletteYellowBackground3),
   }),
   rootOutlineWarning: theme => ({
     color: theme.colorPaletteYellowForeground2,
-    ...macros.borderColor(theme.colorPaletteYellowForeground2),
+    ...shorthands.borderColor(theme.colorPaletteYellowForeground2),
   }),
   rootTintWarning: theme => ({
     backgroundColor: theme.colorPaletteYellowBackground1,
     color: theme.colorPaletteYellowForeground2,
-    ...macros.borderColor(theme.colorPaletteYellowBackground2),
+    ...shorthands.borderColor(theme.colorPaletteYellowBackground2),
   }),
   rootGhostWarning: theme => ({
     color: theme.colorPaletteYellowForeground2,
@@ -139,16 +139,16 @@ const useStyles = makeStyles({
   rootFilledSuccess: theme => ({
     backgroundColor: theme.colorPaletteGreenBackground3,
     color: theme.colorNeutralForegroundOnBrand,
-    ...macros.borderColor('none'),
+    ...shorthands.borderColor('none'),
   }),
   rootOutlineSuccess: theme => ({
     color: theme.colorPaletteGreenForeground2,
-    ...macros.borderColor(theme.colorPaletteGreenForeground2),
+    ...shorthands.borderColor(theme.colorPaletteGreenForeground2),
   }),
   rootTintSuccess: theme => ({
     backgroundColor: theme.colorPaletteGreenBackground1,
     color: theme.colorPaletteGreenForeground1,
-    ...macros.borderColor(theme.colorPaletteGreenBackground2),
+    ...shorthands.borderColor(theme.colorPaletteGreenBackground2),
   }),
   rootGhostSuccess: theme => ({
     color: theme.colorPaletteGreenForeground3,
@@ -156,16 +156,16 @@ const useStyles = makeStyles({
   rootFilledImportant: theme => ({
     backgroundColor: theme.colorNeutralForeground1,
     color: theme.colorNeutralBackground1,
-    ...macros.borderColor(theme.colorTransparentStroke),
+    ...shorthands.borderColor(theme.colorTransparentStroke),
   }),
   rootOutlineImportant: theme => ({
     color: theme.colorNeutralForeground1,
-    ...macros.borderColor(theme.colorNeutralForeground1),
+    ...shorthands.borderColor(theme.colorNeutralForeground1),
   }),
   rootTintImportant: theme => ({
     backgroundColor: theme.colorNeutralForeground3,
     color: theme.colorNeutralBackground1,
-    ...macros.borderColor(theme.colorTransparentStroke),
+    ...shorthands.borderColor(theme.colorTransparentStroke),
   }),
   rootGhostImportant: theme => ({
     color: theme.colorNeutralForeground1,
@@ -173,17 +173,17 @@ const useStyles = makeStyles({
   rootFilledInformative: theme => ({
     backgroundColor: theme.colorNeutralBackground5,
     color: theme.colorNeutralForeground3,
-    ...macros.borderColor(theme.colorTransparentStroke),
+    ...shorthands.borderColor(theme.colorTransparentStroke),
   }),
   rootOutlineInformative: theme => ({
     backgroundColor: theme.colorPaletteDarkOrangeBackground3,
     color: theme.colorNeutralBackground5,
-    ...macros.borderColor(theme.colorNeutralBackground5),
+    ...shorthands.borderColor(theme.colorNeutralBackground5),
   }),
   rootTintInformative: theme => ({
     backgroundColor: theme.colorNeutralBackground4,
     color: theme.colorNeutralForeground3,
-    ...macros.borderColor(theme.colorNeutralStroke2),
+    ...shorthands.borderColor(theme.colorNeutralStroke2),
   }),
   rootGhostInformative: theme => ({
     color: theme.colorNeutralBackground5,
@@ -191,16 +191,16 @@ const useStyles = makeStyles({
   rootFilledSubtle: theme => ({
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorNeutralForeground1,
-    ...macros.borderColor(theme.colorTransparentStroke),
+    ...shorthands.borderColor(theme.colorTransparentStroke),
   }),
   rootOutlineSubtle: theme => ({
     color: theme.colorNeutralForegroundOnBrand,
-    ...macros.borderColor(theme.colorNeutralForegroundOnBrand),
+    ...shorthands.borderColor(theme.colorNeutralForegroundOnBrand),
   }),
   rootTintSubtle: theme => ({
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorNeutralForeground3,
-    ...macros.borderColor(theme.colorNeutralStroke2),
+    ...shorthands.borderColor(theme.colorNeutralStroke2),
   }),
   rootGhostSubtle: theme => ({
     color: theme.colorNeutralForegroundOnBrand,

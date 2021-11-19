@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { Popover, PopoverTrigger, PopoverSurface } from '@fluentui/react-popover';
 import { Button } from '@fluentui/react-button';
 import { PositioningShorthand } from '@fluentui/react-positioning';
@@ -112,7 +112,7 @@ const useGridExampleStyles = makeStyles({
     gridTemplateColumns: 'repeat(5, 1fr)',
     gridTemplateRows: 'repeat(5, 64px)',
     gap: '20px',
-    ...macros.margin('16px', '128px'),
+    ...shorthands.margin('16px', '128px'),
   },
 
   instructions: {

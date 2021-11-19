@@ -1,4 +1,4 @@
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
 import type { AccordionHeaderState } from './AccordionHeader.types';
 
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     font: 'inherit',
     lineHeight: 'normal',
     overflow: 'visible',
-    ...macros.padding('0'),
+    ...shorthands.padding('0'),
     WebkitAppearance: 'button',
     userSelect: 'none',
     textAlign: 'unset',
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   root: theme => ({
     color: theme.colorNeutralForeground1,
     backgroundColor: theme.colorNeutralBackground1,
-    ...macros.borderRadius('2px'),
+    ...shorthands.borderRadius('2px'),
   }),
   rootDisabled: theme => ({
     backgroundImage: 'none',
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   button: {
     position: 'relative',
     width: 'calc(100% - 22px)',
-    ...macros.border('1px', 'solid', 'transparent'),
+    ...shorthands.border('1px', 'solid', 'transparent'),
     paddingRight: '10px',
     paddingLeft: '10px',
     height: '44px',

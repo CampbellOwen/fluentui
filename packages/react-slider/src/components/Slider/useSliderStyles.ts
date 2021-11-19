@@ -1,4 +1,4 @@
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
 import type { SliderState } from './Slider.types';
 
@@ -108,7 +108,7 @@ export const useSliderWrapper = makeStyles({
 export const useRailStyles = makeStyles({
   rail: theme => ({
     position: 'absolute',
-    ...macros.borderRadius(theme.borderRadiusXLarge),
+    ...shorthands.borderRadius(theme.borderRadiusXLarge),
     boxSizing: 'border-box',
     pointerEvents: 'none',
   }),
@@ -119,7 +119,7 @@ export const useRailStyles = makeStyles({
 
   disabled: theme => ({
     backgroundColor: theme.colorNeutralBackgroundDisabled,
-    ...macros.border('1px', 'solid', theme.colorTransparentStrokeDisabled),
+    ...shorthands.border('1px', 'solid', theme.colorTransparentStrokeDisabled),
   }),
 
   horizontal: theme => ({
@@ -166,7 +166,7 @@ export const useTrackWrapperStyles = makeStyles({
 export const useTrackStyles = makeStyles({
   track: theme => ({
     position: 'absolute',
-    ...macros.borderRadius(theme.borderRadiusXLarge),
+    ...shorthands.borderRadius(theme.borderRadiusXLarge),
   }),
 
   horizontal: theme => ({
@@ -207,7 +207,7 @@ export const useMarksWrapperStyles = makeStyles({
     },
 
     [`& .${markLabelClassName}`]: {
-      ...macros.padding('2px'),
+      ...shorthands.padding('2px'),
       fontSize: '12px',
     },
 
@@ -310,7 +310,7 @@ export const useThumbStyles = makeStyles({
     bottom: '0px',
     right: '0px',
     outlineStyle: 'none',
-    ...macros.borderRadius(theme.borderRadiusCircular),
+    ...shorthands.borderRadius(theme.borderRadiusCircular),
     boxSizing: 'border-box',
     boxShadow: `0 0 0 calc(var(--slider-thumb-size) * .2) ${theme.colorNeutralBackground1} inset`,
     transform: 'translate(-50%, -50%)',
@@ -321,10 +321,10 @@ export const useThumbStyles = makeStyles({
       left: '0px',
       bottom: '0px',
       right: '0px',
-      ...macros.borderRadius(theme.borderRadiusCircular),
+      ...shorthands.borderRadius(theme.borderRadiusCircular),
       boxSizing: 'border-box',
       content: "''",
-      ...macros.border('calc(var(--slider-thumb-size) * .05)', 'solid', theme.colorNeutralStroke1),
+      ...shorthands.border('calc(var(--slider-thumb-size) * .05)', 'solid', theme.colorNeutralStroke1),
     },
   }),
 
@@ -335,7 +335,7 @@ export const useThumbStyles = makeStyles({
   disabled: theme => ({
     backgroundColor: theme.colorNeutralForegroundDisabled,
     ':before': {
-      ...macros.border('calc(var(--slider-thumb-size) * .05)', 'solid', theme.colorNeutralForegroundDisabled),
+      ...shorthands.border('calc(var(--slider-thumb-size) * .05)', 'solid', theme.colorNeutralForegroundDisabled),
     },
   }),
 
@@ -370,8 +370,8 @@ const useInputStyles = makeStyles({
   input: {
     opacity: 0,
     position: 'absolute',
-    ...macros.padding('0'),
-    ...macros.margin('0'),
+    ...shorthands.padding('0'),
+    ...shorthands.margin('0'),
     width: '100%',
     height: '100%',
     touchAction: 'none',

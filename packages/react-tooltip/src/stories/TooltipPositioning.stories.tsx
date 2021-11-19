@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tooltip } from '../Tooltip'; // codesandbox-dependency: @fluentui/react-tooltip ^9.0.0-beta
-import { macros, makeStyles } from '@fluentui/react-make-styles'; // codesandbox-dependency: @fluentui/react-make-styles ^9.0.0-beta
+import { shorthands, makeStyles } from '@fluentui/react-make-styles'; // codesandbox-dependency: @fluentui/react-make-styles ^9.0.0-beta
 
 const useStyles = makeStyles({
   targetContainer: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     gridTemplateColumns: 'repeat(5, 1fr)',
     gridTemplateRows: 'repeat(5, 64px)',
     gap: '4px',
-    ...macros.margin('16px 128px'),
+    ...shorthands.margin('16px 128px'),
   },
 });
 

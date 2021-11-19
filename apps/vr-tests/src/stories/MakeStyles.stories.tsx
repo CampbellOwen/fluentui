@@ -1,4 +1,4 @@
-import { macros, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@fluentui/react-theme';
 import { storiesOf } from '@storybook/react';
@@ -7,23 +7,23 @@ import Screener, { Steps } from 'screener-storybook/src/screener';
 
 const useStyles = makeStyles({
   box: theme => ({
-    ...macros.border('5px', 'solid', theme.colorNeutralStroke1),
-    ...macros.borderLeft('20px', 'solid', theme.colorPaletteBlueBorder2),
+    ...shorthands.border('5px', 'solid', theme.colorNeutralStroke1),
+    ...shorthands.borderLeft('20px', 'solid', theme.colorPaletteBlueBorder2),
 
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorNeutralForeground1,
 
-    ...macros.margin('5px'),
-    ...macros.padding('5px'),
+    ...shorthands.margin('5px'),
+    ...shorthands.padding('5px'),
     paddingLeft: '50px',
   }),
 
   container: theme => ({
-    ...macros.border('5px', 'solid', theme.colorNeutralStroke1),
-    ...macros.borderLeft('20px', 'solid', theme.colorPaletteBlueBorder2),
+    ...shorthands.border('5px', 'solid', theme.colorNeutralStroke1),
+    ...shorthands.borderLeft('20px', 'solid', theme.colorPaletteBlueBorder2),
 
-    ...macros.margin('5px'),
-    ...macros.padding('5px'),
+    ...shorthands.margin('5px'),
+    ...shorthands.padding('5px'),
   }),
   containerPrimary: theme => ({
     borderLeftColor: theme.colorPaletteDarkOrangeBorder2,
@@ -36,8 +36,8 @@ const useStyles = makeStyles({
 
 const useFocusStylesA = makeStyles({
   root: {
-    ...macros.border('3px', 'solid', 'blue'),
-    ...macros.padding('10px'),
+    ...shorthands.border('3px', 'solid', 'blue'),
+    ...shorthands.padding('10px'),
 
     ':focus': {
       color: 'red',
@@ -49,8 +49,8 @@ const useFocusStylesA = makeStyles({
 });
 const useFocusStylesB = makeStyles({
   root: {
-    ...macros.border('3px', 'solid', 'orange'),
-    ...macros.padding('10px'),
+    ...shorthands.border('3px', 'solid', 'orange'),
+    ...shorthands.padding('10px'),
 
     ':hover': {
       color: 'orange',

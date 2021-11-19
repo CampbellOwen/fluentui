@@ -1,4 +1,4 @@
-import { macros, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
 import { useBadgeStyles } from '../../Badge';
 import type { PresenceBadgeState } from './PresenceBadge.types';
 
@@ -6,33 +6,33 @@ export const presenceBadgeClassName = 'fui-PresenceBadge';
 
 const useStyles = makeStyles({
   root: theme => ({
-    ...macros.padding(0),
-    ...macros.borderWidth(theme.strokeWidthThick),
+    ...shorthands.padding(0),
+    ...shorthands.borderWidth(theme.strokeWidthThick),
   }),
   thinBorder: theme => ({
-    ...macros.borderWidth(theme.strokeWidthThin),
+    ...shorthands.borderWidth(theme.strokeWidthThin),
   }),
   statusBusy: theme => ({
     backgroundColor: theme.colorPaletteRedBackground3,
-    ...macros.borderColor(theme.colorPaletteRedBackground3),
+    ...shorthands.borderColor(theme.colorPaletteRedBackground3),
   }),
   statusAway: theme => ({
     backgroundColor: theme.colorPaletteMarigoldBackground3,
-    ...macros.borderColor(theme.colorPaletteMarigoldBackground3),
+    ...shorthands.borderColor(theme.colorPaletteMarigoldBackground3),
   }),
   statusAvailable: theme => ({
     backgroundColor: theme.colorPaletteLightGreenForeground3,
-    ...macros.borderColor(theme.colorPaletteLightGreenForeground3),
+    ...shorthands.borderColor(theme.colorPaletteLightGreenForeground3),
   }),
   statusOffline: theme => ({
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorNeutralForeground3,
-    ...macros.borderColor(theme.colorNeutralForeground3),
+    ...shorthands.borderColor(theme.colorNeutralForeground3),
   }),
   statusOutOfOffice: theme => ({
     backgroundColor: theme.colorNeutralBackground1,
     color: theme.colorPaletteBerryForeground3,
-    ...macros.borderColor(theme.colorPaletteBerryForeground3),
+    ...shorthands.borderColor(theme.colorPaletteBerryForeground3),
   }),
   outOfOffice: theme => ({
     backgroundColor: theme.colorNeutralBackground1,

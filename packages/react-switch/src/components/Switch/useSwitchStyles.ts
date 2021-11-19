@@ -1,4 +1,4 @@
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
 import type { SwitchState } from './Switch.types';
 
@@ -87,7 +87,7 @@ const useTrackStyles = makeStyles({
       bottom: '0px',
       right: '0px',
       boxSizing: 'border-box',
-      ...macros.borderRadius('999px'),
+      ...shorthands.borderRadius('999px'),
       content: "''",
       opacity: 'var(--switch-unchecked-opacity)',
     },
@@ -99,7 +99,7 @@ const useTrackStyles = makeStyles({
       bottom: '0px',
       right: '0px',
       boxSizing: 'border-box',
-      ...macros.borderRadius('999px'),
+      ...shorthands.borderRadius('999px'),
       content: "''",
       opacity: 'var(--switch-checked-opacity)',
     },
@@ -107,7 +107,7 @@ const useTrackStyles = makeStyles({
 
   unchecked: theme => ({
     ':before': {
-      ...macros.border('1px', 'solid', theme.colorNeutralStrokeAccessible),
+      ...shorthands.border('1px', 'solid', theme.colorNeutralStrokeAccessible),
       backgroundImage: 'none',
     },
   }),
@@ -115,19 +115,19 @@ const useTrackStyles = makeStyles({
   checked: theme => ({
     ':after': {
       backgroundColor: theme.colorBrandBackground,
-      ...macros.border('none'),
+      ...shorthands.borderStyle('none'),
     },
   }),
 
   disabledUnchecked: theme => ({
     ':before': {
-      ...macros.border('1px', 'solid', theme.colorNeutralStrokeDisabled),
+      ...shorthands.border('1px', 'solid', theme.colorNeutralStrokeDisabled),
     },
   }),
 
   disabledChecked: theme => ({
     ':after': {
-      ...macros.border('1px', 'solid', theme.colorTransparentStrokeDisabled),
+      ...shorthands.border('1px', 'solid', theme.colorTransparentStrokeDisabled),
       backgroundColor: theme.colorNeutralBackgroundDisabled,
     },
   }),
@@ -157,7 +157,7 @@ const useThumbStyles = makeStyles({
     width: 'var(--switch-thumb-size)',
     height: 'var(--switch-thumb-size)',
     boxSizing: 'border-box',
-    ...macros.borderRadius(theme.borderRadiusCircular),
+    ...shorthands.borderRadius(theme.borderRadiusCircular),
     top: '50%',
     transform: 'translate(-50%, -50%)',
     transition: 'background .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
@@ -170,7 +170,7 @@ const useThumbStyles = makeStyles({
       left: '0px',
       bottom: '0px',
       right: '0px',
-      ...macros.borderRadius(theme.borderRadiusCircular),
+      ...shorthands.borderRadius(theme.borderRadiusCircular),
       content: "''",
       opacity: 'var(--switch-unchecked-opacity)',
     },
@@ -181,7 +181,7 @@ const useThumbStyles = makeStyles({
       left: '0px',
       bottom: '0px',
       right: '0px',
-      ...macros.borderRadius(theme.borderRadiusCircular),
+      ...shorthands.borderRadius(theme.borderRadiusCircular),
       content: "''",
       opacity: 'var(--switch-checked-opacity)',
     },
@@ -201,7 +201,7 @@ const useThumbStyles = makeStyles({
 
   disabledUnchecked: theme => ({
     ':before': {
-      ...macros.border('1px', 'solid', theme.colorNeutralForegroundDisabled),
+      ...shorthands.border('1px', 'solid', theme.colorNeutralForegroundDisabled),
       backgroundColor: theme.colorNeutralBackground1,
     },
   }),
@@ -231,8 +231,8 @@ const useInputStyle = makeStyles({
   input: {
     opacity: 0,
     position: 'absolute',
-    ...macros.padding(0),
-    ...macros.margin(0),
+    ...shorthands.padding(0),
+    ...shorthands.margin(0),
     width: '100%',
     height: '100%',
     touchAction: 'none',

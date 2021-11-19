@@ -7,7 +7,7 @@
 import { BorderColorProperty } from 'csstype';
 import { BorderStyleProperty } from 'csstype';
 import { BorderWidthProperty } from 'csstype';
-import { Properties } from 'csstype';
+import * as CSS_2 from 'csstype';
 
 // @internal
 export function __styles<Slots extends string>(classesMapBySlot: CSSClassesMapBySlot<Slots>, cssRules: CSSRulesByBucket): (options: Pick<MakeStylesOptions, 'dir' | 'renderer'>) => Record<Slots, string>;
@@ -23,15 +23,16 @@ export function createDOMRenderer(target?: Document | undefined): MakeStylesRend
 // @public (undocumented)
 export type CSSClasses = /* ltrClassName */ string | [/* ltrClassName */ string, /* rtlClassName */ string];
 
-// @public (undocumented)
-export type CSSClassesMap = Record<PropertyHash, CSSClasses>;
-
+// Warning: (ae-forgotten-export) The symbol "CSSClassesMap" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
 export type CSSClassesMapBySlot<Slots extends string | number> = Record<Slots, CSSClassesMap>;
 
 // @public (undocumented)
 export type CSSRulesByBucket = Partial<Record<StyleBucketName, string[]>>;
 
+// Warning: (ae-forgotten-export) The symbol "SequenceHash" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "LookupItem" needs to be exported by the entry point index.d.ts
 // Warning: (ae-internal-missing-underscore) The name "DEFINITION_LOOKUP_TABLE" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal (undocumented)
@@ -53,11 +54,20 @@ export const LOOKUP_DEFINITIONS_INDEX = 0;
 export const LOOKUP_DIR_INDEX = 1;
 
 // @public (undocumented)
-export type LookupItem = [/* definitions */ CSSClassesMap, /* dir */ /* dir */ 'rtl' | 'ltr'];
+export type MakeStaticStyles = MakeStaticStylesStyle | string;
+
+// @public
+export function makeStaticStyles(styles: MakeStaticStyles | MakeStaticStyles[]): (options: MakeStaticStylesOptions) => void;
 
 // @public (undocumented)
-export type MakeStaticStyles = ({
-    [key: string]: Properties & Record<string, any>;
+export interface MakeStaticStylesOptions {
+    // (undocumented)
+    renderer: MakeStylesRenderer;
+}
+
+// @public (undocumented)
+export type MakeStaticStylesStyle = {
+    [key: string]: CSS_2.Properties & Record<string, any>;
 } & {
     '@font-face'?: {
         fontFamily: string;
@@ -70,30 +80,17 @@ export type MakeStaticStyles = ({
         fontWeight?: number | string;
         unicodeRange?: string;
     };
-}) | string;
+};
 
-// @public
-export function makeStaticStyles(styles: MakeStaticStyles | MakeStaticStyles[]): (options: MakeStaticStylesOptions) => void;
-
-// @public (undocumented)
-export interface MakeStaticStylesOptions {
-    // (undocumented)
-    renderer: MakeStylesRenderer;
-}
-
-// @public (undocumented)
-export interface MakeStyles extends Omit<Properties<MakeStylesCSSValue>, 'animationName'> {
-    // (undocumented)
-    [key: string]: any;
-    // (undocumented)
-    animationName?: object | string;
-}
-
+// Warning: (ae-forgotten-export) The symbol "StylesBySlots" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
 export function makeStyles<Slots extends string | number, Tokens>(stylesBySlots: StylesBySlots<Slots, Tokens>, unstable_cssPriority?: number): (options: MakeStylesOptions) => Record<Slots, string>;
 
+// Warning: (ae-forgotten-export) The symbol "MakeStylesCSSObjectCustom" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
-export type MakeStylesCSSValue = string | 0;
+export type MakeStylesAnimation = Record<'from' | 'to' | string, MakeStylesCSSObjectCustom>;
 
 // @public (undocumented)
 export interface MakeStylesOptions {
@@ -115,17 +112,19 @@ export interface MakeStylesRenderer {
     styleElements: Partial<Record<StyleBucketName, HTMLStyleElement>>;
 }
 
+// Warning: (ae-forgotten-export) The symbol "MakeStylesStrictCSSObject" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
-export type MakeStylesStyleFunctionRule<Tokens> = (tokens: Tokens) => MakeStyles;
+export type MakeStylesStyle = MakeStylesStrictCSSObject | MakeStylesCSSObjectCustom;
 
 // @public (undocumented)
-export type MakeStylesStyleRule<Tokens> = MakeStyles | MakeStylesStyleFunctionRule<Tokens>;
+export type MakeStylesStyleFunctionRule<Tokens> = (tokens: Tokens) => MakeStylesStyle;
+
+// @public (undocumented)
+export type MakeStylesStyleRule<Tokens> = MakeStylesStyle | MakeStylesStyleFunctionRule<Tokens>;
 
 // @public
 export function mergeClasses(...classNames: (string | false | undefined)[]): string;
-
-// @public (undocumented)
-export type PropertyHash = string;
 
 // @public
 export function rehydrateRendererCache(renderer: MakeStylesRenderer, target?: Document | undefined): void;
@@ -138,7 +137,7 @@ export function resolveProxyValues<T>(value: T): T;
 // Warning: (ae-internal-missing-underscore) The name "resolveStyleRules" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal
-export function resolveStyleRules(styles: MakeStyles, unstable_cssPriority?: number): [CSSClassesMap, CSSRulesByBucket];
+export function resolveStyleRules(styles: MakeStylesStyle, unstable_cssPriority?: number): [CSSClassesMap, CSSRulesByBucket];
 
 // @public
 export function resolveStyleRulesForSlots<Slots extends string | number, Tokens>(stylesBySlots: StylesBySlots<Slots, Tokens>, unstable_cssPriority: number): [CSSClassesMapBySlot<Slots>, CSSRulesByBucket];
@@ -152,9 +151,6 @@ export const SEQUENCE_HASH_LENGTH = 7;
 //
 // @internal (undocumented)
 export const SEQUENCE_PREFIX = "___";
-
-// @public (undocumented)
-export type SequenceHash = string;
 
 // @public (undocumented)
 export const shorthands: {
@@ -176,9 +172,6 @@ export type StyleBucketName = 'd' | 'l' | 'v' | 'w' | 'f' | 'i' | 'h' | 'a' | 'k
 
 // @public
 export const styleBucketOrdering: StyleBucketName[];
-
-// @public (undocumented)
-export type StylesBySlots<Slots extends string | number, Tokens> = Record<Slots, MakeStylesStyleRule<Tokens>>;
 
 // Warnings were encountered during analysis:
 //

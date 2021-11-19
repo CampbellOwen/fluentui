@@ -1,18 +1,18 @@
-import { macros, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
 import type { MenuPopoverState } from './MenuPopover.types';
 
 export const menuPopoverClassName = 'fui-MenuPopover';
 
 const useStyles = makeStyles({
   root: theme => ({
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
     backgroundColor: theme.colorNeutralBackground1,
     minWidth: '128px',
     maxWidth: '300px',
     width: 'max-content',
     boxShadow: `${theme.shadow16}`,
-    ...macros.padding('4px'),
-    ...macros.border('1px', 'solid', theme.colorTransparentStroke),
+    ...shorthands.padding('4px'),
+    ...shorthands.border('1px', 'solid', theme.colorTransparentStroke),
   }),
 });
 

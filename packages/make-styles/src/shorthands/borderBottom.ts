@@ -1,13 +1,16 @@
 import { BorderColorProperty, BorderStyleProperty, BorderWidthProperty } from 'csstype';
-import { MakeStyles, MakeStylesCSSValue } from '../types';
+import { MakeStylesStrictCSSObject, MakeStylesCSSValue } from '../types';
 
-export function borderBottom(width: BorderWidthProperty<MakeStylesCSSValue>): MakeStyles;
-export function borderBottom(width: BorderWidthProperty<MakeStylesCSSValue>, style: BorderStyleProperty): MakeStyles;
+export function borderBottom(width: BorderWidthProperty<MakeStylesCSSValue>): MakeStylesStrictCSSObject;
+export function borderBottom(
+  width: BorderWidthProperty<MakeStylesCSSValue>,
+  style: BorderStyleProperty,
+): MakeStylesStrictCSSObject;
 export function borderBottom(
   width: BorderWidthProperty<MakeStylesCSSValue>,
   style: BorderStyleProperty,
   color: BorderColorProperty,
-): MakeStyles;
+): MakeStylesStrictCSSObject;
 
 /**
  * A function that implements expansion for "border", it's simplified - check usage examples.
@@ -21,10 +24,10 @@ export function borderBottom(
  */
 export function borderBottom(
   ...values: [BorderWidthProperty<MakeStylesCSSValue>, BorderStyleProperty?, BorderColorProperty?]
-): MakeStyles {
+): MakeStylesStrictCSSObject {
   return {
     borderBottomWidth: values[0],
-    ...(values[1] && ({ borderBottomStyle: values[1] } as MakeStyles)),
-    ...(values[2] && ({ borderBottomColor: values[2] } as MakeStyles)),
+    ...(values[1] && ({ borderBottomStyle: values[1] } as MakeStylesStrictCSSObject)),
+    ...(values[2] && { borderBottomColor: values[2] }),
   };
 }

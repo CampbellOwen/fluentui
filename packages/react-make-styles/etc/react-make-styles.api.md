@@ -7,7 +7,6 @@
 import { createDOMRenderer } from '@fluentui/make-styles';
 import type { CSSClassesMapBySlot } from '@fluentui/make-styles';
 import type { CSSRulesByBucket } from '@fluentui/make-styles';
-import { macros } from '@fluentui/make-styles';
 import type { MakeStaticStyles } from '@fluentui/make-styles';
 import type { MakeStylesRenderer } from '@fluentui/make-styles';
 import { MakeStylesStyle } from '@fluentui/make-styles';
@@ -22,8 +21,6 @@ import type { Theme } from '@fluentui/react-theme';
 export function __styles<Slots extends string>(classesMapBySlot: CSSClassesMapBySlot<Slots>, cssRules: CSSRulesByBucket): () => Record<Slots, string>;
 
 export { createDOMRenderer }
-
-export { macros }
 
 // @public (undocumented)
 export function makeStaticStyles<Selectors>(styles: MakeStaticStyles | MakeStaticStyles[]): () => void;

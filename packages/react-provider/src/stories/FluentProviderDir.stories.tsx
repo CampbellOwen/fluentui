@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { macros, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles } from '@fluentui/react-make-styles';
 import { FluentProvider } from '../FluentProvider'; // codesandbox-dependency: @fluentui/react-components ^9.0.0-beta
 
 const useStyles = makeStyles({
@@ -13,9 +13,9 @@ const useStyles = makeStyles({
     backgroundColor: theme.colorBrandBackground2,
     color: theme.colorBrandForeground2,
     fontSize: '18px',
-    ...macros.border('1px'),
-    ...macros.borderRadius('5px'),
-    ...macros.padding('5px'),
+    ...shorthands.border('1px'),
+    ...shorthands.borderRadius('5px'),
+    ...shorthands.padding('5px'),
   }),
 });
 

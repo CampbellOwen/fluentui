@@ -1621,6 +1621,21 @@
   resolved "https://registry.yarnpkg.com/@fluentui/react-icons/-/react-icons-1.1.141.tgz#87e04a8f8302b7b8d0d81528a0596731dad2f3de"
   integrity sha512-9/wIK7/Tv6Ya5BHYgEONNN0KBJzcZhwvsCoV5ByFp+mNMc0mfdSi7VfOsgtWgUbORzIJdXqW7BF1gXA2hGkT1A==
 
+"@fluentui/react-shared-contexts@9.0.0-beta.2":
+  version "9.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-shared-contexts/-/react-shared-contexts-9.0.0-beta.2.tgz#bc039a327faff830d5d8b0fb1a6160c386291a7d"
+  integrity sha512-ljN9qUDpb9v/bXkkSCyn34Lv2IPyN3xUPCc0YODeJzzH/bf5V4CRz5wMMu8UguV11hBqDBRlIJs1e1Ak0aAcqg==
+  dependencies:
+    "@fluentui/react-theme" "9.0.0-beta.2"
+    tslib "^2.1.0"
+
+"@fluentui/react-theme@9.0.0-beta.2":
+  version "9.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-theme/-/react-theme-9.0.0-beta.2.tgz#c5c2975afeb0ef589a7b265f23bfbbcae75b9ea1"
+  integrity sha512-ZLTYcOBd4k+YP+YQ0/v7v+eq3U4KuxVFqpb2p9pLQgY0YpXq1hiUoq7VqtQCjMDd9YTcGmNjD4X+yE/8uUGVuQ==
+  dependencies:
+    tslib "^2.1.0"
+
 "@gulp-sourcemaps/identity-map@1.X":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@gulp-sourcemaps/identity-map/-/identity-map-1.0.2.tgz#1e6fe5d8027b1f285dc0d31762f566bccd73d5a9"

@@ -1,4 +1,4 @@
-import { mergeClasses, makeStyles, macros } from '@fluentui/react-make-styles';
+import { mergeClasses, makeStyles, shorthands } from '@fluentui/react-make-styles';
 import type { AvatarState } from './Avatar.types';
 
 export const avatarClassName = 'fui-Avatar';
@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     flexShrink: 0,
     position: 'relative',
     verticalAlign: 'middle',
-    ...macros.borderRadius(theme.borderRadiusCircular),
+    ...shorthands.borderRadius(theme.borderRadiusCircular),
     fontFamily: theme.fontFamilyBase,
     fontWeight: theme.fontWeightSemibold,
     boxShadow: `0 0 0 ${theme.strokeWidthThin} ${theme.colorTransparentStroke} inset`,
@@ -74,16 +74,16 @@ const useStyles = makeStyles({
   textTitle: theme => ({ fontSize: theme.fontSizeBase600 }),
 
   squareSmall: theme => ({
-    ...macros.borderRadius(theme.borderRadiusSmall),
+    ...shorthands.borderRadius(theme.borderRadiusSmall),
   }),
   squareMedium: theme => ({
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
   }),
   squareLarge: theme => ({
-    ...macros.borderRadius(theme.borderRadiusLarge),
+    ...shorthands.borderRadius(theme.borderRadiusLarge),
   }),
   squareXLarge: theme => ({
-    ...macros.borderRadius(theme.borderRadiusXLarge),
+    ...shorthands.borderRadius(theme.borderRadiusXLarge),
   }),
 
   activeOrInactive: {
@@ -100,7 +100,7 @@ const useStyles = makeStyles({
       bottom: 0,
       right: 0,
 
-      ...macros.borderRadius('inherit'),
+      ...shorthands.borderRadius('inherit'),
       transition:
         `margin ${animationTiming.ultraSlow} ${animations.fastEase}, ` +
         `opacity ${animationTiming.slower} ${animations.nullEasing}`,
@@ -109,26 +109,26 @@ const useStyles = makeStyles({
 
   ring: theme => ({
     ':before': {
-      ...macros.borderColor(theme.colorBrandBackgroundStatic),
-      ...macros.borderStyle('solid'),
+      ...shorthands.borderColor(theme.colorBrandBackgroundStatic),
+      ...shorthands.borderStyle('solid'),
     },
   }),
   ringThick: theme => ({
     ':before': {
-      ...macros.margin(`calc(-2 * ${theme.strokeWidthThick})`),
-      ...macros.borderWidth(theme.strokeWidthThick),
+      ...shorthands.margin(`calc(-2 * ${theme.strokeWidthThick})`),
+      ...shorthands.borderWidth(theme.strokeWidthThick),
     },
   }),
   ringThicker: theme => ({
     ':before': {
-      ...macros.margin(`calc(-2 * ${theme.strokeWidthThicker})`),
-      ...macros.borderWidth(theme.strokeWidthThicker),
+      ...shorthands.margin(`calc(-2 * ${theme.strokeWidthThicker})`),
+      ...shorthands.borderWidth(theme.strokeWidthThicker),
     },
   }),
   ringThickest: theme => ({
     ':before': {
-      ...macros.margin(`calc(-2 * ${theme.strokeWidthThickest})`),
-      ...macros.borderWidth(theme.strokeWidthThickest),
+      ...shorthands.margin(`calc(-2 * ${theme.strokeWidthThickest})`),
+      ...shorthands.borderWidth(theme.strokeWidthThickest),
     },
   }),
 
@@ -151,7 +151,7 @@ const useStyles = makeStyles({
       `opacity ${animationTiming.faster} ${animations.nullEasing}`,
 
     ':before': {
-      ...macros.margin(0),
+      ...shorthands.margin(0),
       opacity: 0,
       transition:
         `margin ${animationTiming.ultraSlow} ${animations.fastOutSlowInMin}, ` +
@@ -176,7 +176,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: '100%',
 
-    ...macros.borderRadius('inherit'),
+    ...shorthands.borderRadius('inherit'),
     objectFit: 'cover',
     verticalAlign: 'top',
   },
@@ -194,7 +194,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     verticalAlign: 'center',
     textAlign: 'center',
-    ...macros.borderRadius('inherit'),
+    ...shorthands.borderRadius('inherit'),
   },
 });
 

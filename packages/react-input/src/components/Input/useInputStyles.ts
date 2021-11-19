@@ -1,4 +1,4 @@
-import { macros, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import type { InputState } from './Input.types';
 import type { Theme } from '@fluentui/react-theme';
 
@@ -44,7 +44,7 @@ const useRootStyles = makeStyles({
     gap: horizontalSpacing.xxs,
     fontFamily: theme.fontFamilyBase,
     // used for all but underline
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
     boxSizing: 'border-box',
     '*, *:before, *:after': {
       boxSizing: 'border-box',
@@ -52,17 +52,17 @@ const useRootStyles = makeStyles({
   }),
   small: theme => ({
     minHeight: fieldHeights.small,
-    ...macros.padding('0', horizontalSpacing.sNudge),
+    ...shorthands.padding('0', horizontalSpacing.sNudge),
     ...contentSizes.caption1(theme),
   }),
   medium: theme => ({
     minHeight: fieldHeights.medium,
-    ...macros.padding('0', horizontalSpacing.mNudge),
+    ...shorthands.padding('0', horizontalSpacing.mNudge),
     ...contentSizes.body1(theme),
   }),
   large: theme => ({
     minHeight: fieldHeights.large,
-    ...macros.padding('0', horizontalSpacing.m),
+    ...shorthands.padding('0', horizontalSpacing.m),
     ...contentSizes[400](theme),
     gap: horizontalSpacing.sNudge,
   }),
@@ -71,14 +71,14 @@ const useRootStyles = makeStyles({
   },
   outline: theme => ({
     backgroundColor: theme.colorNeutralBackground1,
-    ...macros.border('1px', 'solid', theme.colorNeutralStroke1),
+    ...shorthands.border('1px', 'solid', theme.colorNeutralStroke1),
     borderBottomColor: theme.colorNeutralStrokeAccessible,
   }),
   underline: theme => ({
     backgroundColor: theme.colorTransparentBackground,
     // corners look strange if rounded
-    ...macros.borderRadius(0),
-    ...macros.borderBottom('1px', 'solid', theme.colorNeutralStrokeAccessible),
+    ...shorthands.borderRadius(0),
+    ...shorthands.borderBottom('1px', 'solid', theme.colorNeutralStrokeAccessible),
   }),
   filled: theme => ({
     boxShadow: theme.shadow2, // optional shadow for filled appearances
@@ -91,17 +91,17 @@ const useRootStyles = makeStyles({
   }),
   disabled: theme => ({
     cursor: 'not-allowed',
-    ...macros.border('1px', 'solid', 'theme.colorNeutralStrokeDisabled'),
+    ...shorthands.border('1px', 'solid', 'theme.colorNeutralStrokeDisabled'),
     // because underline doesn't usually have a radius
-    ...macros.borderRadius(theme.borderRadiusMedium),
+    ...shorthands.borderRadius(theme.borderRadiusMedium),
   }),
 });
 
 const useInputElementStyles = makeStyles({
   base: theme => ({
     flexGrow: 1,
-    ...macros.borderStyle('none'), // input itself never has a border (this is handled by inputWrapper)
-    ...macros.padding('0', horizontalSpacing.xxs),
+    ...shorthands.borderStyle('none'), // input itself never has a border (this is handled by inputWrapper)
+    ...shorthands.padding('0', horizontalSpacing.xxs),
     color: theme.colorNeutralForeground1,
     // Use literal "transparent" (not from the theme) to always let the color from the root show through
     backgroundColor: 'transparent',
@@ -123,7 +123,7 @@ const useInputElementStyles = makeStyles({
   }),
   large: theme => ({
     ...contentSizes[400](theme),
-    ...macros.padding('0', horizontalSpacing.sNudge),
+    ...shorthands.padding('0', horizontalSpacing.sNudge),
   }),
   disabled: theme => ({
     color: theme.colorNeutralForegroundDisabled,

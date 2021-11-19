@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { macros, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles } from '@fluentui/react-make-styles';
 import { Divider } from '../Divider'; // codesandbox-dependency: @fluentui/react-divider ^9.0.0-beta
 
 const useStyles = makeStyles({
@@ -35,14 +35,14 @@ const useStyles = makeStyles({
   },
   customLineColor: {
     ':before': {
-      ...macros.borderColor('#FF00FF'),
+      ...shorthands.borderColor('#FF00FF'),
     },
     ':after': {
-      ...macros.borderColor('#FF00FF'),
+      ...shorthands.borderColor('#FF00FF'),
     },
   },
   customLineStyle: {
-    ...macros.borderWidth('2px'),
+    ...shorthands.borderWidth('2px'),
     ':before': {
       borderTopStyle: 'dashed',
       borderTopWidth: '2px',

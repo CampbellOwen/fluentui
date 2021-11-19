@@ -1,4 +1,4 @@
-import { macros, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, mergeClasses, makeStyles } from '@fluentui/react-make-styles';
 import {
   thumbClassName,
   trackClassName,
@@ -27,8 +27,8 @@ const useInputStyles = makeStyles({
   input: {
     opacity: 0,
     position: 'absolute',
-    ...macros.padding(0),
-    ...macros.margin(0),
+    ...shorthands.padding(0),
+    ...shorthands.margin(0),
     width: '0px',
     height: '0px',
     pointerEvents: 'none',
@@ -41,7 +41,7 @@ const useInputStyles = makeStyles({
         ':before': {
           outlineStyle: 'none',
           boxSizing: 'border-box',
-          ...macros.border('calc(var(--slider-thumb-size) * .05)', 'solid', 'black'),
+          ...shorthands.border('calc(var(--slider-thumb-size) * .05)', 'solid', 'black'),
         },
       },
     }),
@@ -55,7 +55,7 @@ const useInputStyles = makeStyles({
         ':before': {
           outlineStyle: 'none',
           boxSizing: 'border-box',
-          ...macros.border('calc(var(--slider-thumb-size) * .05)', 'solid', 'black'),
+          ...shorthands.border('calc(var(--slider-thumb-size) * .05)', 'solid', 'black'),
         },
       },
     }),
