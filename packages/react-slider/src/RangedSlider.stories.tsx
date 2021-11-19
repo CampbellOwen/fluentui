@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px',
+    // gap: '10px',
     width: '400px',
   },
   slider: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   verticalWrapper: {
     display: 'flex',
-    gap: '10px',
+    // gap: '10px',
   },
 });
 

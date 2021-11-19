@@ -41,7 +41,7 @@ const useRootStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'nowrap',
-    gap: horizontalSpacing.xxs,
+    ...shorthands.gap(horizontalSpacing.xxs),
     fontFamily: theme.fontFamilyBase,
     // used for all but underline
     ...shorthands.borderRadius(theme.borderRadiusMedium),
@@ -64,7 +64,7 @@ const useRootStyles = makeStyles({
     minHeight: fieldHeights.large,
     ...shorthands.padding('0', horizontalSpacing.m),
     ...contentSizes[400](theme),
-    gap: horizontalSpacing.sNudge,
+    ...shorthands.gap(horizontalSpacing.sNudge),
   }),
   inline: {
     display: 'inline-flex',

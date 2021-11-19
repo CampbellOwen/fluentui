@@ -84,7 +84,8 @@ export const useRootStyles = makeStyles({
 export const useSliderWrapper = makeStyles({
   sliderWrapper: theme => ({
     position: 'absolute',
-    overflow: 'hidden',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
   }),
 
   horizontal: theme => ({

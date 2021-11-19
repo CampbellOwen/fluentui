@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
+    ...shorthands.gap('20px'),
     ...shorthands.padding('20px'),
   },
   storyFilledBackground: theme => ({ backgroundColor: theme.colorNeutralBackground3 }),

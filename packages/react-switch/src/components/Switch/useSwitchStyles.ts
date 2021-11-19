@@ -76,7 +76,9 @@ const useTrackStyles = makeStyles({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    transition: 'background .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
+    transitionProperty: 'backgroundColor',
+    transitionDuration: '0.1s',
+    transitionTimingFunction: 'cubic-bezier(0.33, 0, 0.67, 1)',
     touchAction: 'none',
     pointerEvents: 'none',
 
@@ -160,7 +162,9 @@ const useThumbStyles = makeStyles({
     ...shorthands.borderRadius(theme.borderRadiusCircular),
     top: '50%',
     transform: 'translate(-50%, -50%)',
-    transition: 'background .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
+    transitionProperty: 'backgroundColor',
+    transitionDuration: '0.1s',
+    transitionTimingFunction: 'cubic-bezier(0.33, 0, 0.67, 1)',
     touchAction: 'none',
     pointerEvents: 'none',
 

@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px',
+    ...shorthands.gap('10px'),
   },
 });
 
@@ -132,7 +132,7 @@ const useMaterialStyles = makeStyles({
   },
 
   thumbWrapper: {
-    transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    // transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
     left: 'calc(20px * .4)',
     right: 'calc(20px * .4)',
   },

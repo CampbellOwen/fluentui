@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     boxSizing: 'content-box',
     backgroundColor: 'inherit',
     color: 'inherit',
+    fontFamily: 'inherit',
     lineHeight: 'normal',
     overflowX: 'visible',
     overflowY: 'visible',
