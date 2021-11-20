@@ -8,7 +8,7 @@ export const flexStyles: MakeStylesStyle = {
 
 export const gridStyles = (gridGap: string): MakeStylesStyle => ({
   display: 'grid',
-  gridGap,
+  gridRowGap: gridGap,
 });
 
 export const typography: Record<'text' | 'header', MakeStylesStyleRule<Theme>> = {
