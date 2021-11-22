@@ -58,6 +58,7 @@ const useStyles = makeStyles({
   expandIconEnd: {
     flexGrow: '1',
     flexShrink: '1',
+    flexBasis: '0%',
     display: 'flex',
     justifyContent: 'flex-end',
     paddingLeft: '8px',
