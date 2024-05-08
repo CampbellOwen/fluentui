@@ -6,6 +6,10 @@ import { isConformant } from '../../testing/isConformant';
 import { Button } from './Button';
 import { ButtonProps } from './Button.types';
 
+const Wrapper: React.FC = props => {
+  return null;
+};
+
 describe('Button', () => {
   isConformant({
     Component: Button as React.FunctionComponent<ButtonProps>,
@@ -19,6 +23,7 @@ describe('Button', () => {
         },
       ],
     },
+    renderOptions: { wrapper: Wrapper },
   });
 
   describe('meets accessibility requirements', () => {
